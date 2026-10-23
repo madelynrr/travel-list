@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+export default function App() {
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // Header/logo
+    // Form component: holds the State: array of hashes for travel list, each item a hash
+    // Container to display items (items passed as params?)
+      // Item component (state passed in as params? Will need packed/delete functions passed in)
+      // Sort button: doesn't need to change array, just sort (make it dynamic?)
+      // Clear button (delete function passed as param)
+    // Footer (needs items state passed in as params)
+  )
 }
-
-export default App;
