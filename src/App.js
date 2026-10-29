@@ -23,10 +23,16 @@ function Logo() {
 
 // Form component: holds the State: array of hashes for travel list, each item a hash
 function Form() {
+  const nums = Array.from({ length: 20 }, (_, index) => index + 1);
+
   return (
     <form className="add-form">
       <h3>What do you need for your trip? 😍</h3>
-      <select></select>
+      <select>
+        {nums.map((num) => {
+          return <option value={num}>{num}</option>;
+        })}
+      </select>
       <input type="text" placeholder="Item..." />
       <button>Add</button>
     </form>
