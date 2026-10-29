@@ -24,9 +24,12 @@ function Logo() {
 // Form component: holds the State: array of hashes for travel list, each item a hash
 function Form() {
   return (
-    <div className="add-form">
+    <form className="add-form">
       <h3>What do you need for your trip? 😍</h3>
-    </div>
+      <select></select>
+      <input type="text" placeholder="Item..." />
+      <button>Add</button>
+    </form>
   );
 }
 
