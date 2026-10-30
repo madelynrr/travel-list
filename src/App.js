@@ -46,6 +46,9 @@ function Form() {
 
     const newItem = { id: Date.now(), description, quantity, packed: false };
     console.log(newItem);
+
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
