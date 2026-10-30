@@ -34,6 +34,7 @@ function Logo() {
 
 // Form component: holds the State: array of hashes for travel list, each item a hash
 function Form() {
+  const [description, setDescription] = useState("");
   const nums = Array.from({ length: 20 }, (_, index) => index + 1);
 
   function handleSubmit(e) {
@@ -48,7 +49,12 @@ function Form() {
           return <option value={num}>{num}</option>;
         })}
       </select>
-      <input type="text" placeholder="Item..." />
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button>Add</button>
     </form>
   );
