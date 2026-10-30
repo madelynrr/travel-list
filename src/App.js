@@ -35,6 +35,8 @@ function Logo() {
 // Form component: holds the State: array of hashes for travel list, each item a hash
 function Form() {
   const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
   const nums = Array.from({ length: 20 }, (_, index) => index + 1);
 
   function handleSubmit(e) {
@@ -44,7 +46,10 @@ function Form() {
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your trip? 😍</h3>
-      <select>
+      <select
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
         {nums.map((num) => {
           return <option value={num}>{num}</option>;
         })}
