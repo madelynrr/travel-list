@@ -9,8 +9,15 @@ const initialItems = [
 export default function App() {
   const [items, setItems] = useState(initialItems);
 
-  function handleStatus({ id }) {}
-
+  function handleStatus(id) {
+    const updatedItems = items.map((item) => {
+      if (id === item.id) {
+        item.packed = !item.packed;
+      }
+      return item;
+    });
+    setItems([...updatedItems]);
+  }
   return (
     <div className="app">
       <Logo />
@@ -65,11 +72,12 @@ function Item({ item, handleStatus }) {
     <li>
       <input
         type="checkbox"
-        // checked={item.packed}
+        checked={item.packed}
         onChange={() => handleStatus(item.id)}
       ></input>
-      {/* <span style={{ textDecoration: `${item.packed && "line-through"}` }}> */}
-      <span>
+      <span
+      // style={{ textDecoration: `${item.packed} ?"line-through" : "none"` }}
+      >
         {item.quantity} {item.description}
       </span>
       <button>❌</button>
