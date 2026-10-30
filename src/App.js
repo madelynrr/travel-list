@@ -36,8 +36,12 @@ function Logo() {
 function Form() {
   const nums = Array.from({ length: 20 }, (_, index) => index + 1);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
-    <form className="add-form">
+    <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your trip? 😍</h3>
       <select>
         {nums.map((num) => {
